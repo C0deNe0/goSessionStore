@@ -8,6 +8,9 @@ import (
 
 var jwtKey = []byte("my_secret_key")
 
+//   instead of doing this we should do it like this
+//   var jwtKey = []byte(os.Getenv("JWT_SECRET"))
+
 func GenreateToken(userId string) (string, error) {
 	claims := jwt.MapClaims{
 		"user_id": userId,

@@ -6,6 +6,7 @@ import (
 
 	"github.com/C0deNeo/goSessionStore/internal/domain"
 	"github.com/C0deNeo/goSessionStore/internal/pkg/hash"
+	"github.com/C0deNeo/goSessionStore/internal/pkg/jwt"
 )
 
 type AuthUseCase struct {

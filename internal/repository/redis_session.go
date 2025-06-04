@@ -11,6 +11,11 @@ type RedisSessionRepo struct {
 	client *redis.Client
 }
 
+// StoreTokken implements domain.SessionRepo.
+func (r *RedisSessionRepo) StoreTokken(ctx context.Context, userID string, token string, ttlseconds int) error {
+	panic("unimplemented")
+}
+
 func NewRedisSessionRepo(client *redis.Client) *RedisSessionRepo {
 	return &RedisSessionRepo{
 		client: client,
