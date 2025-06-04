@@ -5,6 +5,7 @@ import (
 	"errors"
 
 	"github.com/C0deNeo/goSessionStore/internal/domain"
+	"github.com/C0deNeo/goSessionStore/internal/pkg/hash"
 )
 
 type AuthUseCase struct {
@@ -17,7 +18,7 @@ func NewAuthUseCase(u domain.UserRepo, s domain.SessionRepo) *AuthUseCase {
 }
 
 func (us *AuthUseCase) SignUp(ctx context.Context, username, password string) error {
-	hashedPassword, _ := hash.hashPassword(password)
+	hashedPassword, _ := hash.HashPassword(password)
 	user := &domain.User{
 		Id:       username,
 		Username: username,
